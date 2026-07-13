@@ -1,110 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-
-html,
-body{
-    margin:0;
-    padding:0;
-    overflow:hidden;
-    background:transparent;
-}
-
-/* Banner */
-
-.banner{
-    width:100%;
-    height:210px;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    position:relative;
-
-    /* Fade edges */
-    -webkit-mask-image:linear-gradient(
-        to right,
-        transparent 0%,
-        black 8%,
-        black 92%,
-        transparent 100%
-    );
-
-    mask-image:linear-gradient(
-        to right,
-        transparent 0%,
-        black 8%,
-        black 92%,
-        transparent 100%
-    );
-}
-
-/* Moving logos */
-
-.track{
-    display:flex;
-    align-items:center;
-    gap:60px;
-    width:max-content;
-    animation:scroll 55s linear infinite;
-}
-
-/* Pause on hover */
-
-.track:hover{
-    animation-play-state:paused;
-}
-
-/* Logos */
-
-.track img{
-
-    height:160px;
-    width:auto;
-
-    flex-shrink:0;
-    display:block;
-
-    transition:transform .25s ease;
-}
-
-/* Tiny hover zoom */
-
-.track img:hover{
-    transform:scale(1.06);
-}
-
-@keyframes scroll{
-
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-50%);
-    }
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="banner">
-    <div class="track" id="track"></div>
-</div>
-
-<script>
-
-const logos=[
-
-"https://static.wixstatic.com/media/a49720_2933a7b9703341d39bf29f7967cc6bfd~mv2.png",
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+html,body{margin:0;overflow:hidden}
+.banner{position:relative;height:140px;display:flex;align-items:center;overflow:hidden}
+.banner:before,.banner:after{content:'';position:absolute;top:0;width:80px;height:100%;pointer-events:none;z-index:2}
+.banner:before{left:0;background:linear-gradient(to right,#bfbfbf,transparent)}
+.banner:after{right:0;background:linear-gradient(to left,#bfbfbf,transparent)}
+.track{display:flex;align-items:center;gap:30px;animation:scroll 40s linear infinite}
+.track:hover{animation-play-state:paused}
+.logo{width:210px;height:120px;display:flex;justify-content:center;align-items:center;flex-shrink:0}
+.logo img{max-width:220%;max-height:220%;object-fit:contain}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style></head><body><div class="banner"><div id="track" class="track"></div></div><script>
+const logos=["https://static.wixstatic.com/media/a49720_2933a7b9703341d39bf29f7967cc6bfd~mv2.png",
 "https://static.wixstatic.com/media/a49720_5f5156f007604d5a953e69e3f2409920~mv2.png",
 "https://static.wixstatic.com/media/a49720_ab3a86ef00f847c198a9d066b5fa49e2~mv2.png",
 "https://static.wixstatic.com/media/a49720_51df727ec44e440fa1dec773064af5c4~mv2.png",
@@ -139,19 +45,7 @@ const logos=[
 "https://static.wixstatic.com/media/a49720_c45b981566ec4d64bbbb4721d8d06571~mv2.png",
 "https://static.wixstatic.com/media/a49720_b9ccbea0241c4473b9042ca2a31c394b~mv2.png",
 "https://static.wixstatic.com/media/a49720_3a089fc29ec442d7bdf894095882e034~mv2.png",
-"https://static.wixstatic.com/media/a49720_72d33d1e41384ca2982630d9056a0449~mv2.png"
-
-];
-
-const track=document.getElementById("track");
-
-[...logos,...logos].forEach(src=>{
-    const img=new Image();
-    img.src=src;
-    track.appendChild(img);
-});
-
-</script>
-
-</body>
-</html>
+"https://static.wixstatic.com/media/a49720_72d33d1e41384ca2982630d9056a0449~mv2.png"];
+const t=document.getElementById('track');
+[...logos,...logos].forEach(src=>{const d=document.createElement('div');d.className='logo';const i=new Image();i.src=src;i.onload=()=>{const r=i.naturalWidth/i.naturalHeight;let s=1.7;if(r>3)s=2.0;else if(r>2)s=1.85;else if(r>1.5)s=1.7;else if(r<0.8)s=1.5;i.style.transform=`scale(${s})`;};d.appendChild(i);t.appendChild(d);});
+</script></body></html>
