@@ -10,42 +10,186 @@ html,body{margin:0;overflow:hidden}
 .logo img{max-width:205%;max-height:205%;object-fit:contain}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 </style></head><body><div class="banner"><div id="track" class="track"></div></div><script>
-const logos=["https://static.wixstatic.com/media/a49720_2933a7b9703341d39bf29f7967cc6bfd~mv2.png",
-"https://static.wixstatic.com/media/a49720_5f5156f007604d5a953e69e3f2409920~mv2.png",
-"https://static.wixstatic.com/media/a49720_ab3a86ef00f847c198a9d066b5fa49e2~mv2.png",
-"https://static.wixstatic.com/media/a49720_51df727ec44e440fa1dec773064af5c4~mv2.png",
-"https://static.wixstatic.com/media/a49720_4c5f389b8e3a45e7a16720817ff13047~mv2.png",
-"https://static.wixstatic.com/media/a49720_2c4ec8a69d9e44d4b3bf25aefd6006e6~mv2.png",
-"https://static.wixstatic.com/media/a49720_8bcb09b24c994a22844990bdc8706fbd~mv2.png",
-"https://static.wixstatic.com/media/a49720_e1f1f4fcaa804ddc8add792e4115f725~mv2.png",
-"https://static.wixstatic.com/media/a49720_4a18e9ef99b54024a81de26ea64f6d52~mv2.png",
-"https://static.wixstatic.com/media/a49720_f779f657724443b7868e3ca18b2b0143~mv2.png",
-"https://static.wixstatic.com/media/a49720_025876c54ecf4a8396df3ba4b55a4da3~mv2.png",
-"https://static.wixstatic.com/media/a49720_f0c862c1fd5a41ae9fdbee1a6cad1cc6~mv2.png",
-"https://static.wixstatic.com/media/a49720_a21f9fa5b2884591b5a561b5ca5c9338~mv2.png",
-"https://static.wixstatic.com/media/a49720_d6a1ca92f00f4731b0b7af1bbb385926~mv2.png",
-"https://static.wixstatic.com/media/a49720_25ca00d6e1474132a020e809399478aa~mv2.png",
-"https://static.wixstatic.com/media/a49720_3964766d95ef48f2854ae605579c87fc~mv2.png",
-"https://static.wixstatic.com/media/a49720_ba4a654c0cd74490aaf59a55b9813fba~mv2.png",
-"https://static.wixstatic.com/media/a49720_12ce057dbac54a95a55260d3f05e3d91~mv2.png",
-"https://static.wixstatic.com/media/a49720_43dc0926e91a4da1bac847638b8e8a99~mv2.png",
-"https://static.wixstatic.com/media/a49720_28c978f74b6f487f8ac551a2cef61fe1~mv2.png",
-"https://static.wixstatic.com/media/a49720_050c1428610645aaa22776161ae74273~mv2.png",
-"https://static.wixstatic.com/media/a49720_ba1109f9003e4735b2ecb89ec1581a42~mv2.png",
-"https://static.wixstatic.com/media/a49720_58b5cbf34d344ad6abbfc71c57aef687~mv2.png",
-"https://static.wixstatic.com/media/a49720_143f749bdf7e48d4bb2ff90051bc7cd5~mv2.png",
-"https://static.wixstatic.com/media/a49720_08576912442c4c3fa253fd34a801757e~mv2.png",
-"https://static.wixstatic.com/media/a49720_8356b587bb4743bdaa468457667a2f5c~mv2.png",
-"https://static.wixstatic.com/media/a49720_49b3540ddc724c9da00098bfde9e06e2~mv2.png",
-"https://static.wixstatic.com/media/a49720_604d58366be249009c638d42031fd7bf~mv2.png",
-"https://static.wixstatic.com/media/a49720_8fccc3a92f8a410a84e22c0336aac07c~mv2.png",
-"https://static.wixstatic.com/media/a49720_1656237f1f7949d7ae7c208f959d9d2f~mv2.png",
-"https://static.wixstatic.com/media/a49720_8c873f7294a24fde92bbbc5ad8810c42~mv2.png",
-"https://static.wixstatic.com/media/a49720_2bc6ad9be23c478b863e3ea01a7ffa00~mv2.png",
-"https://static.wixstatic.com/media/a49720_c45b981566ec4d64bbbb4721d8d06571~mv2.png",
-"https://static.wixstatic.com/media/a49720_b9ccbea0241c4473b9042ca2a31c394b~mv2.png",
-"https://static.wixstatic.com/media/a49720_3a089fc29ec442d7bdf894095882e034~mv2.png",
-"https://static.wixstatic.com/media/a49720_72d33d1e41384ca2982630d9056a0449~mv2.png"];
+const logos = [
+  {
+    src:"https://static.wixstatic.com/media/a49720_2933a7b9703341d39bf29f7967cc6bfd~mv2.png",
+    link:"https://www.canva.com/design/DAHDHqQP7NE/AmrkCyNzu6AsnGqIPHy2xA/view?utm_content=DAHDHqQP7NE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h58bf69955f"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_5f5156f007604d5a953e69e3f2409920~mv2.png",
+    link:"https://www.clothingauthority.net/bad-birdie-catalogs"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_ab3a86ef00f847c198a9d066b5fa49e2~mv2.png",
+    link:"https://indd.adobe.com/view/fbc9777b-aaae-44e1-baf7-d2becc995b69"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_51df727ec44e440fa1dec773064af5c4~mv2.png",
+    link:"https://online.fliphtml5.com/wtfsa/xeoq/index.html#p=1"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_4c5f389b8e3a45e7a16720817ff13047~mv2.png",
+    link:"https://files.constantcontact.com/14dc2d54401/7855cd9b-5167-412a-a767-1b25258c67d9.pdf?rdr=true"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_2c4ec8a69d9e44d4b3bf25aefd6006e6~mv2.png",
+    link:"https://www.canva.com/design/DAGvPHyl2Ys/OmOYB34Qmzw0HS7AevAXqg/view?utm_content=DAGvPHyl2Ys&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=heb1223d9a5"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_8bcb09b24c994a22844990bdc8706fbd~mv2.png",
+    link:"https://gfsgraphics.blob.core.windows.net/gfs-graphics/prd/gfsionline/share/26FA_CR_CATALOG_RESORT_WEB_4.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_e1f1f4fcaa804ddc8add792e4115f725~mv2.png",
+    link:"https://drive.google.com/file/d/1o9Y-Lqee3smGuPK0O854FuOYfQOw1SQy/view"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_4a18e9ef99b54024a81de26ea64f6d52~mv2.png",
+    link:"https://drive.google.com/file/d/1HfwYYa7k0gqjFxR32hs8lK6YNIXVOtOs/view"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_f779f657724443b7868e3ca18b2b0143~mv2.png",
+    link:"https://catalog.mjluxe-enterprises.com/sites/default/files/2026-03/Collars-%26-Co.---Corporate-Best-Sellers---2025.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_025876c54ecf4a8396df3ba4b55a4da3~mv2.png",
+    link:"https://www.ocsapparel.com/fall-2026-catalog"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_f0c862c1fd5a41ae9fdbee1a6cad1cc6~mv2.png",
+    link:"https://www.canva.com/design/DAG_oatRmX8/9INyvlC-IEqqMLIUXbEQpA/view?utm_content=DAG_oatRmX8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4a9406cd1f"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_a21f9fa5b2884591b5a561b5ca5c9338~mv2.png",
+    link:"https://www.clothingauthority.net/fableticscatalogs"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_d6a1ca92f00f4731b0b7af1bbb385926~mv2.png",
+    link:"https://www.clothingauthority.net/_files/ugd/a49720_aa1301986e774da0b2fc5e0646b098a1.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_25ca00d6e1474132a020e809399478aa~mv2.png",
+    link:"https://www.canva.com/design/DAG--qzyZNE/cC9Dr-sAmSV7tyJNED49-Q/view?utm_content=DAG--qzyZNE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h30fa2b55dc"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_3964766d95ef48f2854ae605579c87fc~mv2.png",
+    link:"https://media.footjoy.com/Catalogs/2024/SP24.APFC.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_ba4a654c0cd74490aaf59a55b9813fba~mv2.png",
+    link:"https://www.clothingauthority.net/fpscustom"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_12ce057dbac54a95a55260d3f05e3d91~mv2.png",
+    link:"https://app.repspark.com/Linesheets/DigitalCatalog/Catalog/55453e0b-9c55-4414-a13c-d4cc2cb0e0f4?c=glb"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_43dc0926e91a4da1bac847638b8e8a99~mv2.png",
+    link:"https://catalog.mjluxe-enterprises.com/sites/default/files/2026-03/Greyson-Corporate-Catalog---2026-%281%29.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_28c978f74b6f487f8ac551a2cef61fe1~mv2.png",
+    link:"https://catalog.mjluxe-enterprises.com/sites/default/files/2026-03/Helly-Hansen---Corporate-Best-Sellers---2026.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_050c1428610645aaa22776161ae74273~mv2.png",
+    link:"https://catalog.mjluxe-enterprises.com/sites/default/files/2026-03/Holderness-%26-Bourne---2026-Corporate-Catalog.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_ba1109f9003e4735b2ecb89ec1581a42~mv2.png",
+    link:"https://catalog.mjluxe-enterprises.com/sites/default/files/2026-06/2026-Johnnie-O-Men%27s-Core.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_58b5cbf34d344ad6abbfc71c57aef687~mv2.png",
+    link:null
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_143f749bdf7e48d4bb2ff90051bc7cd5~mv2.png",
+    link:null
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_08576912442c4c3fa253fd34a801757e~mv2.png",
+    link:"https://app-media.noloco.app/facetinteractive/att72vZBeaIwi9bMo18300-Peter-Millar-Price-Update-01-05-2026.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_8356b587bb4743bdaa468457667a2f5c~mv2.png",
+    link:"https://app-media.noloco.app/facetinteractive/attuUdbklOd6ajkHI18300-Rhone---Core-2026.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_49b3540ddc724c9da00098bfde9e06e2~mv2.png",
+    link:"https://www.clothingauthority.net/_files/ugd/a49720_e2e7e72145d643999ebab8f04c8e8120.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_604d58366be249009c638d42031fd7bf~mv2.png",
+    link:"https://app-media.noloco.app/facetinteractive/attQ8a7flZBvMXtAn18300-Stio---Corporate-Catalog.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_8fccc3a92f8a410a84e22c0336aac07c~mv2.png",
+    link:"https://app-media.noloco.app/facetinteractive/att3bamLMFIm7EeFo18300-Straight-Down---Core-Catalog.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_1656237f1f7949d7ae7c208f959d9d2f~mv2.png",
+    link:"https://fliphtml5.com/bookcase/tdjnl/"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_8c873f7294a24fde92bbbc5ad8810c42~mv2.png",
+    link:"https://catalog.mjluxe-enterprises.com/sites/default/files/2026-05/Tasc%20Performance%20-%20Men%27s%20and%20Women%27s%20Core%20-%202026.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_2bc6ad9be23c478b863e3ea01a7ffa00~mv2.png",
+    link:"https://toririchard.com/"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_c45b981566ec4d64bbbb4721d8d06571~mv2.png",
+    link:"https://www.clothingauthority.net/_files/ugd/a49720_fc54e8656a5c4287871f8901e8bd075d.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_b9ccbea0241c4473b9042ca2a31c394b~mv2.png",
+    link:"https://catalog.mjluxe-enterprises.com/sites/default/files/2026-06/UNRL%20-%20Men%27s%20Core%20-%202026.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_3a089fc29ec442d7bdf894095882e034~mv2.png",
+    link:"https://catalog.mjluxe-enterprises.com/sites/default/files/2026-06/Vuori%20Pre-Order%20Catalog%20-%209.15.26%20%26%202.1.27.pdf"
+  },
+  {
+    src:"https://static.wixstatic.com/media/a49720_72d33d1e41384ca2982630d9056a0449~mv2.png",
+    link:"https://www.clothingauthority.net/_files/ugd/a49720_71c83f4d9fbb4a9ab689eacf28d6a25d.pdf"
+  }
+];
 const t=document.getElementById('track');
-[...logos,...logos].forEach(src=>{const d=document.createElement('div');d.className='logo';const i=new Image();i.src=src;i.onload=()=>{const r=i.naturalWidth/i.naturalHeight;let s=1.55;if(r>3)s=1.8;else if(r>2)s=1.68;else if(r>1.5)s=1.55;else if(r<0.8)s=1.4;i.style.transform=`scale(${s})`;};d.appendChild(i);t.appendChild(d);});
-</script></body></html>
+[...logos, ...logos].forEach(item => {
+
+  const wrapper = item.link
+    ? document.createElement("a")
+    : document.createElement("div");
+
+  if (item.link) {
+    wrapper.href = item.link;
+    wrapper.target = "_blank";
+    wrapper.rel = "noopener noreferrer";
+    wrapper.style.textDecoration = "none";
+    wrapper.style.cursor = "pointer";
+  }
+
+  wrapper.className = "logo";
+
+  const img = new Image();
+  img.src = item.src;
+
+  img.onload = () => {
+    const ratio = img.naturalWidth / img.naturalHeight;
+
+    let scale = 1.55;
+
+    if (ratio > 3) scale = 1.80;
+    else if (ratio > 2) scale = 1.68;
+    else if (ratio > 1.5) scale = 1.55;
+    else if (ratio < 0.8) scale = 1.40;
+
+    img.style.transform = `scale(${scale})`;
+  };
+
+  wrapper.appendChild(img);
+  t.appendChild(wrapper);
+
+});
