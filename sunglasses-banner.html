@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+html,body{margin:0;overflow:hidden}
+.banner{position:relative;height:140px;display:flex;align-items:center;overflow:hidden}
+.banner:before,.banner:after{content:'';position:absolute;top:0;width:80px;height:100%;pointer-events:none;z-index:2}
+.banner:before{left:0;background:linear-gradient(to right,#bfbfbf,transparent)}
+.banner:after{right:0;background:linear-gradient(to left,#bfbfbf,transparent)}
+.track{display:flex;align-items:center;gap:38px;animation:scroll 16.7s linear infinite}
+.track:hover{animation-play-state:paused}
+.logo{width:198px;height:115px;display:flex;justify-content:center;align-items:center;flex-shrink:0;transition:transform .25s ease,filter .25s ease;cursor:default}
+.logo:hover{transform:scale(1.08);filter:drop-shadow(0 6px 14px rgba(0,0,0,.25))}
+a.logo{cursor:pointer;text-decoration:none}
+.logo img{max-width:205%;max-height:205%;object-fit:contain}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style></head><body><div class="banner"><div id="track" class="track"></div></div><script>
+const logos=[
+{src:"https://static.wixstatic.com/media/a49720_95a9b9e51dc74c52ab95de7cca77a83f~mv2.png",href:null},
+{src:"https://static.wixstatic.com/media/a49720_fe20bb8fab024dcfa1c8f735ff10e93e~mv2.png",href:"https://www.canva.com/design/DAHDwAs4b-8/rlrPJwNAZUd0uMFGUpm03A/view?utm_content=DAHDwAs4b-8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h38047c99a8"},
+{src:"https://static.wixstatic.com/media/a49720_a8ce79d715ab48af9cbf08cf92616637~mv2.png",href:null},
+{src:"https://static.wixstatic.com/media/a49720_7e45d6c3dc6c4095a15bc712ef4178d4~mv2.png",href:null},
+{src:"https://static.wixstatic.com/media/a49720_c4d2838125684f32b0baf922cfeb96d7~mv2.png",href:null},
+{src:"https://static.wixstatic.com/media/a49720_f8c9c4196b404158839d287d3dc79644~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_7e6af21e8ffc47959ec062a9d0356cfb.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_bbf5fec1db9d4b7280cce3ccbebb37ba~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_e5ab0e413b2542faab4b5b5cb468c10c.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_e4880c3b25c24dcca132c455ea02b912~mv2.png",href:"https://drive.google.com/file/d/1lu27AJRzqGczU4tqm4M0DM4Yil2P2PbZ/view"},
+{src:"https://static.wixstatic.com/media/a49720_38bd3bd962a64c549442597e118a4d1d~mv2.png",href:"https://files.constantcontact.com/14dc2d54401/0d74dd90-f7fd-4bf2-8619-e36d4782ced6.pdf?rdr=true"},
+{src:"https://static.wixstatic.com/media/a49720_df4e6b1429624362842c48f63345f3a1~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_a1a592da1bfd4c7cb4625a15be1a8635.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_7701f2ebeb394230b82c93f6d2f58a62~mv2.png",href:null},
+{src:"https://static.wixstatic.com/media/a49720_1642b201badc4092bca2648929618d48~mv2.png",href:null},
+{src:"https://static.wixstatic.com/media/a49720_b7885a84854f40d3b8e61564aa574a73~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_936765b506444d18aafa6f9d36440589.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_2bbbc8c4e15847dc9af5b9168e05cf38~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_5954cc66e01b4f8586ab5569baa48803.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_04cf2eb4f82a409eb09f913ded99b469~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_081e9325a5d5477d9f2a4d0fde0f57fa.pdf"}
+];
+const t=document.getElementById('track');
+[...logos,...logos].forEach(({src,href})=>{
+  const d=document.createElement(href?'a':'div');
+  d.className='logo';
+  if(href){d.href=href;d.target='_blank';d.rel='noopener noreferrer';}
+  const i=new Image();
+  i.src=src;
+  i.onload=()=>{const r=i.naturalWidth/i.naturalHeight;let s=1.55;if(r>3)s=1.8;else if(r>2)s=1.68;else if(r>1.5)s=1.55;else if(r<0.8)s=1.4;i.style.transform=`scale(${s})`;};
+  d.appendChild(i);
+  t.appendChild(d);
+});
+</script></body></html>
