@@ -1,0 +1,47 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+html,body{margin:0;overflow:hidden}
+.banner{position:relative;height:140px;display:flex;align-items:center;overflow:hidden}
+.banner:before,.banner:after{content:'';position:absolute;top:0;width:80px;height:100%;pointer-events:none;z-index:2}
+.banner:before{left:0;background:linear-gradient(to right,#bfbfbf,transparent)}
+.banner:after{right:0;background:linear-gradient(to left,#bfbfbf,transparent)}
+.track{display:flex;align-items:center;gap:38px;animation:scroll 40s linear infinite}
+.track:hover{animation-play-state:paused}
+.logo{width:198px;height:115px;display:flex;justify-content:center;align-items:center;flex-shrink:0;transition:transform .25s ease,filter .25s ease;cursor:default}
+.logo:hover{transform:scale(1.08);filter:drop-shadow(0 6px 14px rgba(0,0,0,.25))}
+a.logo{cursor:pointer;text-decoration:none}
+.logo img{max-width:205%;max-height:205%;object-fit:contain}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style></head><body><div class="banner"><div id="track" class="track"></div></div><script>
+const logos=[
+{src:"https://static.wixstatic.com/media/a49720_56e9da373f404aac915facde60a4891e~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_b9ae0776c4ef4bd4bb7b5117265c35f4.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_e368399f75764f06afb8f88feaca2452~mv2.png",href:"https://www.canva.com/design/DAGhFi8P9xs/TPyTqBg6VhrW6tcR7hYNjg/view?utm_content=DAGhFi8P9xs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h13d0134d35"},
+{src:"https://static.wixstatic.com/media/a49720_964acc4c638540a4bf351efe0bb6836d~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_2949c864224c4be29faa70ef9ca20bcc.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_53df602a2346429b98364792cba72212~mv2.png",href:"https://drinkfete.com/collections/cocktail-infusions"},
+{src:"https://static.wixstatic.com/media/a49720_d6a1ca92f00f4731b0b7af1bbb385926~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_aa1301986e774da0b2fc5e0646b098a1.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_3098b6019c6f40ccb5a2a34e3a49759f~mv2.png",href:"https://www.clothingauthority.net/fpscustom"},
+{src:"https://static.wixstatic.com/media/a49720_27a04a8d3a144918b413c7118fb15b05~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_f661574bf3d64095b23c0a55b5a28f40.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_862e97854fca4cc890182b7e769d8800~mv2.png",href:"https://catalog.mjluxe-enterprises.com/sites/default/files/2026-03/Kashwere-2025-FW-Product-Catalog.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_96a6764f676e4539920932f55d72a4df~mv2.png",href:"https://app-media.noloco.app/facetinteractive/attggNYG2Q4bqVcZv18300-LAMY_Complete-Catalog-and-Retail-Pricelist_2025.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_ad82ee936aca4e8aa43369818d4fe0dd~mv2.png",href:"https://cdn.shopify.com/s/files/1/0480/9470/7866/files/2026_Fall_Catalog_SMALL_2.pdf?v=1767715807"},
+{src:"https://static.wixstatic.com/media/a49720_89e0d124be164b74af093ca79c14d5c6~mv2.png",href:"https://drive.google.com/file/d/1pPggf27tsl1GUOm0b8ujGmOICPtrCt3H/view"},
+{src:"https://static.wixstatic.com/media/a49720_7da60e11944d494f9653056036515790~mv2.png",href:"https://files.constantcontact.com/14dc2d54401/b8e3696a-62db-421e-b58d-7a05f481d2d9.pdf?rdr=true"},
+{src:"https://static.wixstatic.com/media/a49720_ec0b2fb59cb7461d9218ddecf37cc362~mv2.png",href:"https://www.clothingauthority.net/scalacatalogs"},
+{src:"https://static.wixstatic.com/media/a49720_c34a886afcc84b798f9f9ac2af4c28b1~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_92f30e8895b04af4a07028edf3879e29.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_418949b4e3c04416ba59999db2d7d23a~mv2.png",href:"https://www.spiceandtea.com/?utm_term=&utm_campaign=Sales-Performance+Max+Oct+Test&utm_source=adwords&utm_medium=ppc&hsa_acc=6015497812&hsa_cam=23173916863&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=23173954690&gbraid=0AAAAADmrKLhzlTILEKfyMbK22pM6_GybU&gclid=Cj0KCQiA4eHLBhCzARIsAJ2NZoKNDooXaQA8Y4jvqbV3KonhDNpvxv3z1EIFqtkBz2TAOS3rAqZlDScaAsKPEALw_wcB"},
+{src:"https://static.wixstatic.com/media/a49720_dd87c1b9b782441ab29c25e04cb63250~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_12513d53b7774e01bdb237eda6c42348.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_6a91e24b3bcc457da07cd98a9e021378~mv2.png",href:"https://travelpro.com/"},
+{src:"https://static.wixstatic.com/media/a49720_f5513e31fce34eb9bff56786afb8ec67~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_1aca617f839149c29af9b616f25883bd.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_655a958b7d3c4ae4ab9f75fe1128ec11~mv2.png",href:"https://view.publitas.com/one-touch-point/wallaroo-2026-catalog/page/1"}
+];
+const t=document.getElementById('track');
+[...logos,...logos].forEach(({src,href})=>{
+  const d=document.createElement(href?'a':'div');
+  d.className='logo';
+  if(href){d.href=href;d.target='_blank';d.rel='noopener noreferrer';}
+  const i=new Image();
+  i.src=src;
+  i.onload=()=>{const r=i.naturalWidth/i.naturalHeight;let s=1.55;if(r>3)s=1.8;else if(r>2)s=1.68;else if(r>1.5)s=1.55;else if(r<0.8)s=1.4;i.style.transform=`scale(${s})`;};
+  d.appendChild(i);
+  t.appendChild(d);
+});
+</script></body></html>
