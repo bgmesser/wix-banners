@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
+html,body{margin:0;overflow:hidden}
+.banner{position:relative;height:140px;display:flex;align-items:center;overflow:hidden}
+.banner:before,.banner:after{content:'';position:absolute;top:0;width:80px;height:100%;pointer-events:none;z-index:2}
+.banner:before{left:0;background:linear-gradient(to right,#bfbfbf,transparent)}
+.banner:after{right:0;background:linear-gradient(to left,#bfbfbf,transparent)}
+.track{display:flex;align-items:center;gap:38px;animation:scroll 17.8s linear infinite}
+.track:hover{animation-play-state:paused}
+.logo{width:198px;height:115px;display:flex;justify-content:center;align-items:center;flex-shrink:0;transition:transform .25s ease,filter .25s ease;cursor:default}
+.logo:hover{transform:scale(1.08);filter:drop-shadow(0 6px 14px rgba(0,0,0,.25))}
+a.logo{cursor:pointer;text-decoration:none}
+.logo img{max-width:205%;max-height:205%;object-fit:contain}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style></head><body><div class="banner"><div id="track" class="track"></div></div><script>
+const logos=[
+{src:"https://static.wixstatic.com/media/a49720_56e9da373f404aac915facde60a4891e~mv2.png",href:"https://files.constantcontact.com/14dc2d54401/55f763d7-1143-4340-81c8-f1b85d9ed57e.pdf?rdr=true"},
+{src:"https://static.wixstatic.com/media/a49720_dbc3f94dd38740739a49c6926bc87048~mv2.png",href:"https://www.canva.com/design/DAGvPHyl2Ys/OmOYB34Qmzw0HS7AevAXqg/view?utm_content=DAGvPHyl2Ys&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=heb1223d9a5"},
+{src:"https://static.wixstatic.com/media/a49720_a72567a6b7bb4193a41241de4bf6b0ae~mv2.png",href:"https://corralbootsdesign.wetransfer.com/previews/3d0faa46ccdb0a6309d176a849ed30fc20260129160156/36e392?itemId=5e0fd85b284165bde4e35f1a945f0fb220260129160202"},
+{src:"https://static.wixstatic.com/media/a49720_38c294e2d8f74f8183d141a6c4bf8d9b~mv2.png",href:"https://www.sheepskin.com/?srsltid=AfmBOorNCxj4drjISwV-26pwceRGBXObmvbiTiJI5v6IUXsKb3BMWxxc"},
+{src:"https://static.wixstatic.com/media/a49720_9bec242290fe49c28585446695274d81~mv2.png",href:"https://www.canva.com/design/DAG--fKemOk/G_zR8nGBqjOnsrob4NKtjw/view?utm_content=DAG--fKemOk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0cad429cf3"},
+{src:"https://static.wixstatic.com/media/a49720_94691e4c6c18472c9f7132136f67cd03~mv2.png",href:"https://corralbootsdesign.wetransfer.com/downloads/0cb24d1f7501887b931676841e53f91420260129160105/e5fa18?t_exp=1801238465&t_lsid=01d40cd4-ea04-4f82-b743-0d97126f331c&t_network=link&t_rid=YXV0aDB8VHJhbnNmZXJ8b2p3NGIwMHVuNTI=&t_s=download_link&t_ts=1769702465"},
+{src:"https://static.wixstatic.com/media/a49720_ee2e54e322084aea8a3e917ab496b2af~mv2.png",href:"https://www.footjoy.com/"},
+{src:"https://static.wixstatic.com/media/a49720_22cff3c078ec477d8644102a51d0b0f9~mv2.png",href:"https://www.canva.com/design/DAG_oSBPHc0/Hez6SXwMZ-V4by09Fm1s7Q/view?utm_content=DAG_oSBPHc0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2c0a256124"},
+{src:"https://static.wixstatic.com/media/a49720_c184902de63c462b9755ffb8605b45a4~mv2.png",href:"https://www.clothingauthority.net/havianascatalog"},
+{src:"https://static.wixstatic.com/media/a49720_b465fa673e91446991c5d41c62323171~mv2.png",href:"https://www.canva.com/design/DAHFcyWqxgk/-QK-AnpDnTNAbqvv8r3GcQ/view?utm_content=DAHFcyWqxgk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf4d3c06d4d"},
+{src:"https://static.wixstatic.com/media/a49720_2721e9ab391841aaa39ec956681724c1~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_afe34b28c7074511af23d9683c473049.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_152a68bb40f8434caf72efe3ab1e6aaa~mv2.png",href:"https://www.canva.com/design/DAHMSYSPzbU/aH_VNqIiQJaWnJSXThg_Og/view?utm_content=DAHMSYSPzbU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3c582a3003"},
+{src:"https://static.wixstatic.com/media/a49720_049d1364575045ce819fac910fcf8641~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_0f6da8819d5141b5b0b664d77e6bad0f.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_9a1608ad60cb428a8d3c434e80e0a648~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_b3487eeb9e8f400e802971345fe28fc1.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_9a78e7c88655414cadb3108c45ec1fda~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_dcb9de39a95e4cae8e097666188eb322.pdf"},
+{src:"https://static.wixstatic.com/media/a49720_2b3d7d45c259465783e4d46db0f8725d~mv2.png",href:"https://www.clothingauthority.net/_files/ugd/a49720_dc55c24e2fed4afda560b89e6b915c42.pdf"}
+];
+const t=document.getElementById('track');
+[...logos,...logos].forEach(({src,href})=>{
+  const d=document.createElement(href?'a':'div');
+  d.className='logo';
+  if(href){d.href=href;d.target='_blank';d.rel='noopener noreferrer';}
+  const i=new Image();
+  i.src=src;
+  i.onload=()=>{const r=i.naturalWidth/i.naturalHeight;let s=1.55;if(r>3)s=1.8;else if(r>2)s=1.68;else if(r>1.5)s=1.55;else if(r<0.8)s=1.4;i.style.transform=`scale(${s})`;};
+  d.appendChild(i);
+  t.appendChild(d);
+});
+</script></body></html>
